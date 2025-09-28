@@ -1,6 +1,7 @@
 ﻿#include <catch2/catch_test_macros.hpp>
 #include <cmath>
 #include "../include/derivative.h"
+using namespace Catch;
 
 // Тестовые функции для проверки
 double square(double x) { return x * x; }
