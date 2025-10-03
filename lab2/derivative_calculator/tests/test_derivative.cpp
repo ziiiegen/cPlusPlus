@@ -16,15 +16,12 @@ TEST_CASE("Derivative of basic functions", "[derivative]") {
     // SECTION - создает подраздел внутри тестовой группы
     SECTION("Derivative of x^2 should be 2x") {
         // REQUIRE - проверяет условие, если ложно - тест падает
-        // Approx(4.0).margin(1e-4) - проверка с допуском ±0.0001
         REQUIRE(std::abs(derivative(square, 2.0) - 4.0) < 1e-4);
         REQUIRE(std::abs(derivative(square, 0.0) - 0.0) < 1e-4);
         REQUIRE(std::abs(derivative(square, -1.0) - (-2.0)) < 1e-4);
     }
     
     SECTION("Derivative of sin(x) should be cos(x)") {
-        // Производная sin(x) в точке 0 должна быть cos(0) = 1
-        // Производная sin(x) в точке π/2 должна быть cos(π/2) = 0
         REQUIRE(std::abs(derivative(sine, 0.0) - 1.0) < 1e-4);
         REQUIRE(std::abs(derivative(sine, M_PI/2) - 0.0) < 1e-4);
     }
